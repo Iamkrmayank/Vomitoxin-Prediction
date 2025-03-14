@@ -74,4 +74,13 @@ if data_file is not None:
 else:
     st.write("Please upload a CSV file.")
 
+# Display Result Images
+st.subheader("Model Results")
+
+github_base_url = "https://raw.githubusercontent.com/<your_username>/<repo_name>/<branch>/"  # Replace with your GitHub raw URL
+
+for i in range(1, 7):
+    image_url = f"{github_base_url}/result{i}.png"
+    st.image(image_url, caption=f"Result {i}", use_column_width=True)
+
 st.write("Developed with Streamlit")
