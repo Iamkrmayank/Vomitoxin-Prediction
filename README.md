@@ -40,6 +40,28 @@ The analysis of vomitoxin prediction from spectral data yielded the following ke
 
 These results demonstrate that for this specific vomitoxin prediction task, traditional machine learning approaches, particularly Random Forest, provide the most accurate predictions from the available spectral data.
 
+# Challenges 
+
+⚖️ Dimensionality Reduction Trade-off:
+
+Using PCA reduced the feature space, simplifying the model and reducing computation time.
+However, PCA may discard some variance in the data, potentially leading to loss of important information. This could explain the lower R² scores across models.
+⚠️ Model Complexity vs. Interpretability:
+
+Linear Regression is simple and interpretable but struggles with capturing complex relationships.
+More complex models like Random Forests perform better but sacrifice interpretability, making it harder to understand feature importance and model behavior.
+📉 Overfitting vs. Underfitting:
+
+Using Random Forest and Gradient Boosting could lead to overfitting, especially if hyperparameters aren’t tuned.
+On the other hand, simpler models like Ridge and Lasso might underfit if they oversimplify the data by shrinking coefficients.
+🔍 Data Quality Challenges:
+
+Outliers identified in the initial analysis may have distorted model training, particularly affecting linear models.
+Handling outliers is a double-edged sword: removing them improves model performance but might remove valuable extreme cases if they represent genuine data.
+⏩ Bias-Variance Trade-off:
+
+Simpler models like Linear Regression may have high bias and low variance, making them stable but inaccurate.
+Complex models like Gradient Boosting have low bias but high variance, requiring careful tuning to avoid overfitting.
 
 # Installation Guide 
 
