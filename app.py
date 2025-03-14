@@ -81,6 +81,6 @@ github_base_url = "https://github.com/Iamkrmayank/Vomitoxin-Prediction/blob/main
 
 for i in range(1, 7):
     image_url = f"{github_base_url}/result{i}.png"
-    st.image(image_url, caption=f"Result {i}", use_column_width=True)
+    st.image(image_url, caption=f"Result {i}", use_container_width=True)
 
 st.write("Developed with Streamlit")
