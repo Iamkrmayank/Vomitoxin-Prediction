@@ -1,3 +1,5 @@
+## Results Summary & Installation Guide
+
 ## Results Summary
 
 The analysis of vomitoxin prediction from spectral data yielded the following key results:
@@ -39,7 +41,7 @@ The analysis of vomitoxin prediction from spectral data yielded the following ke
 These results demonstrate that for this specific vomitoxin prediction task, traditional machine learning approaches, particularly Random Forest, provide the most accurate predictions from the available spectral data.
 
 
-# Installation Guide and Repository Structure
+# Installation Guide 
 
 ## Dependencies Installation
 
