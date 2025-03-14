@@ -77,10 +77,11 @@ else:
 # Display Result Images
 st.subheader("Model Results")
 
-github_base_url = "https://github.com/Iamkrmayank/Vomitoxin-Prediction/blob/main"  # Replace with your GitHub raw URL
+github_base_url = "https://raw.githubusercontent.com/Iamkrmayank/Vomitoxin-Prediction/main"
 
 for i in range(1, 7):
     image_url = f"{github_base_url}/result{i}.png"
     st.image(image_url, caption=f"Result {i}", use_container_width=True)
 
 st.write("Developed with Streamlit")
+
