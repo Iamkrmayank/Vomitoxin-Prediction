@@ -43,7 +43,7 @@ if data_file is not None:
         st.pyplot(plt)
 
         # Model training
-        st.subheader("Model Training")
+        st.subheader("Model Training before applying any outlier detection technique or any hyperparameter techniques")
         model_choice = st.selectbox("Choose a model", ["Random Forest", "Gradient Boosting", "XGBoost"])
         test_size = st.slider("Test Set Size (%)", 10, 50, 20) / 100
 
