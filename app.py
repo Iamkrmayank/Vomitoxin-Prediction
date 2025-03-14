@@ -75,7 +75,7 @@ else:
     st.write("Please upload a CSV file.")
 
 # Display Result Images
-st.subheader("Model Results")
+st.subheader("Model Results After Applying Hyperparameter techniques")
 
 github_base_url = "https://raw.githubusercontent.com/Iamkrmayank/Vomitoxin-Prediction/main"
 
