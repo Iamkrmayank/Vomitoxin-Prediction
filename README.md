@@ -1,66 +1,4 @@
-## Results Summary & Installation Guide
-
-## Results Summary
-
-The analysis of vomitoxin prediction from spectral data yielded the following key results:
-
-### Model Performance Comparison
-
-| Model | RMSE | MAE | R² Score |
-|-------|------|-----|----------|
-| Random Forest | 2198.96 | 256.76 | 0.9827 |
-| Gradient Boosting | 3170.04 | 391.03 | 0.9641 |
-| XGBoost | 2612.54 | 350.33 | 0.9756 |
-| Attention Model | 17318.59 | — | -0.0722 |
-| Transformer Model | 17291.26 | — | -0.0692 |
-
-### Key Findings
-
-1. **Best Performing Model**: Random Forest demonstrated superior performance with the highest R² score (0.9827) and lowest error metrics (RMSE: 2198.96, MAE: 256.76).
-
-2. **Traditional vs. Deep Learning Models**: Traditional machine learning models (Random Forest, Gradient Boosting, XGBoost) significantly outperformed deep learning approaches (Attention and Transformer models) for this specific task.
-
-3. **Model Ranking**:
-   - Random Forest: Best overall performance
-   - XGBoost: Strong second-place performance
-   - Gradient Boosting: Good performance
-   - Attention and Transformer models: Poor performance with negative R² scores indicating worse predictions than a simple mean-based model
-
-4. **Feature Importance**: 
-   - The analysis identified several key spectral bands that showed strong predictive power for vomitoxin levels
-   - Tree-based models provided valuable insights into the most influential spectral regions
-
-5. **Preprocessing Impact**: 
-   - Outlier handling through capping significantly improved model performance
-   - Log transformation of the target variable helped address skewness issues
-
-6. **Deep Learning Limitations**:
-   - The negative R² scores for Attention and Transformer models suggest these architectures may not be suitable for this particular spectral dataset
-   - Possible reasons include insufficient training data, overfitting, or the spectral features being better captured by tree-based ensemble methods
-
-These results demonstrate that for this specific vomitoxin prediction task, traditional machine learning approaches, particularly Random Forest, provide the most accurate predictions from the available spectral data.
-
-#  Trade-offs or Challenges Encountered
-
-1. **⚖️ Dimensionality Reduction Trade-off**:
-Using PCA reduced the feature space, simplifying the model and reducing computation time.
-However, PCA may discard some variance in the data, potentially leading to loss of important information. This could explain the lower R² scores across models.
-
-2. **⚠️ Model Complexity vs. Interpretability**:
-Linear Regression is simple and interpretable but struggles with capturing complex relationships.
-More complex models like Random Forests perform better but sacrifice interpretability, making it harder to understand feature importance and model behavior.
-
-3. **📉 Overfitting vs. Underfitting**:
-Using Random Forest and Gradient Boosting could lead to overfitting, especially if hyperparameters aren’t tuned.
-On the other hand, simpler models like Ridge and Lasso might underfit if they oversimplify the data by shrinking coefficients.
-
-4. **🔍 Data Quality Challenges**:
-Outliers identified in the initial analysis may have distorted model training, particularly affecting linear models.
-Handling outliers is a double-edged sword: removing them improves model performance but might remove valuable extreme cases if they represent genuine data.
-
-5. **⏩ Bias-Variance Trade-off**:
-Simpler models like Linear Regression may have high bias and low variance, making them stable but inaccurate.
-Complex models like Gradient Boosting have low bias but high variance, requiring careful tuning to avoid overfitting.
+## Installation Guide & Results Summary
 
 # Installation Guide 
 
@@ -151,4 +89,66 @@ pip install -r requirements.txt
 3. **Missing Data Files**:
    - Error: "FileNotFoundError: [Errno 2] No such file or directory: 'TASK-ML-INTERN.csv'"
    - Solution: Ensure the data file is in the correct location and has the correct name
+
+## Results Summary
+
+The analysis of vomitoxin prediction from spectral data yielded the following key results:
+
+### Model Performance Comparison
+
+| Model | RMSE | MAE | R² Score |
+|-------|------|-----|----------|
+| Random Forest | 2198.96 | 256.76 | 0.9827 |
+| Gradient Boosting | 3170.04 | 391.03 | 0.9641 |
+| XGBoost | 2612.54 | 350.33 | 0.9756 |
+| Attention Model | 17318.59 | — | -0.0722 |
+| Transformer Model | 17291.26 | — | -0.0692 |
+
+### Key Findings
+
+1. **Best Performing Model**: Random Forest demonstrated superior performance with the highest R² score (0.9827) and lowest error metrics (RMSE: 2198.96, MAE: 256.76).
+
+2. **Traditional vs. Deep Learning Models**: Traditional machine learning models (Random Forest, Gradient Boosting, XGBoost) significantly outperformed deep learning approaches (Attention and Transformer models) for this specific task.
+
+3. **Model Ranking**:
+   - Random Forest: Best overall performance
+   - XGBoost: Strong second-place performance
+   - Gradient Boosting: Good performance
+   - Attention and Transformer models: Poor performance with negative R² scores indicating worse predictions than a simple mean-based model
+
+4. **Feature Importance**: 
+   - The analysis identified several key spectral bands that showed strong predictive power for vomitoxin levels
+   - Tree-based models provided valuable insights into the most influential spectral regions
+
+5. **Preprocessing Impact**: 
+   - Outlier handling through capping significantly improved model performance
+   - Log transformation of the target variable helped address skewness issues
+
+6. **Deep Learning Limitations**:
+   - The negative R² scores for Attention and Transformer models suggest these architectures may not be suitable for this particular spectral dataset
+   - Possible reasons include insufficient training data, overfitting, or the spectral features being better captured by tree-based ensemble methods
+
+These results demonstrate that for this specific vomitoxin prediction task, traditional machine learning approaches, particularly Random Forest, provide the most accurate predictions from the available spectral data.
+
+#  Trade-offs or Challenges Encountered
+
+1. **⚖️ Dimensionality Reduction Trade-off**:
+Using PCA reduced the feature space, simplifying the model and reducing computation time.
+However, PCA may discard some variance in the data, potentially leading to loss of important information. This could explain the lower R² scores across models.
+
+2. **⚠️ Model Complexity vs. Interpretability**:
+Linear Regression is simple and interpretable but struggles with capturing complex relationships.
+More complex models like Random Forests perform better but sacrifice interpretability, making it harder to understand feature importance and model behavior.
+
+3. **📉 Overfitting vs. Underfitting**:
+Using Random Forest and Gradient Boosting could lead to overfitting, especially if hyperparameters aren’t tuned.
+On the other hand, simpler models like Ridge and Lasso might underfit if they oversimplify the data by shrinking coefficients.
+
+4. **🔍 Data Quality Challenges**:
+Outliers identified in the initial analysis may have distorted model training, particularly affecting linear models.
+Handling outliers is a double-edged sword: removing them improves model performance but might remove valuable extreme cases if they represent genuine data.
+
+5. **⏩ Bias-Variance Trade-off**:
+Simpler models like Linear Regression may have high bias and low variance, making them stable but inaccurate.
+Complex models like Gradient Boosting have low bias but high variance, requiring careful tuning to avoid overfitting.
 
