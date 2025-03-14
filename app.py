@@ -77,7 +77,7 @@ else:
 # Display Result Images
 st.subheader("Model Results")
 
-github_base_url = "https://github.com/Iamkrmayank/Vomitoxin-Prediction/main/"  # Replace with your GitHub raw URL
+github_base_url = "https://github.com/Iamkrmayank/Vomitoxin-Prediction/blob/main"  # Replace with your GitHub raw URL
 
 for i in range(1, 7):
     image_url = f"{github_base_url}/result{i}.png"
