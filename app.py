@@ -10,7 +10,7 @@ from sklearn.metrics import mean_squared_error
 import numpy as np
 
 # App title
-st.title("Vomitoxin-PredictionL")
+st.title("Vomitoxin Prediction")
 
 # File uploader
 data_file = st.file_uploader("Upload your CSV file", type=["csv"])
@@ -19,15 +19,18 @@ if data_file is not None:
     st.write("Dataset Preview:")
     st.write(data.head())
 
-    # Data preprocessing
+    # Check if target column exists
     if 'vomitoxin_ppb' in data.columns:
         X = data.drop('vomitoxin_ppb', axis=1)
         y = data['vomitoxin_ppb']
-        
+
+        # Convert non-numeric columns and handle missing values
+        X = X.select_dtypes(include=[np.number]).fillna(0)
+
         # Standardize features
         scaler = StandardScaler()
         X_scaled = scaler.fit_transform(X)
-        
+
         # PCA visualization
         st.subheader("PCA Visualization")
         pca = PCA(n_components=2)
@@ -66,6 +69,8 @@ if data_file is not None:
             plt.title(f"{model_choice} Predictions")
             st.pyplot(plt)
 
+    else:
+        st.error("The dataset must contain a 'vomitoxin_ppb' column.")
 else:
     st.write("Please upload a CSV file.")
 
