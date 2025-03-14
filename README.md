@@ -11,8 +11,8 @@
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/vomitoxin-prediction.git
-cd vomitoxin-prediction
+git clone https://github.com/Iamkrmayank/Vomitoxin-Prediction.git
+cd Vomitoxin-Prediction
 
 # Create a virtual environment (optional but recommended)
 python -m venv venv
@@ -52,32 +52,6 @@ pip install -r requirements.txt
 - Ensure the dataset file `TASK-ML-INTERN.csv` is available in the working directory
 - The CSV file should contain columns for 'hsi_id', spectral bands, and 'vomitoxin_ppb'
 
-## Repository Structure
-
-```
-vomitoxin-prediction/
-│
-├── data/
-│   └── TASK-ML-INTERN.csv         # Main dataset with spectral data and vomitoxin levels
-│
-├── notebooks/
-│   └── Task-updated-new.ipynb     # Jupyter notebook with complete analysis workflow
-│
-├── src/                           # Source code (if script version is used)
-│   ├── preprocessing.py           # Data preprocessing functions
-│   ├── feature_engineering.py     # Feature engineering operations
-│   ├── models.py                  # Model definitions and training functions
-│   └── evaluation.py              # Model evaluation utilities
-│
-├── results/                       # Directory for storing model outputs and visualizations
-│   ├── figures/                   # Generated plots and visualizations
-│   └── models/                    # Saved model files
-│
-├── requirements.txt               # List of required packages
-├── README.md                      # Project overview and documentation
-└── setup.py                       # Package setup file
-```
-
 ## Key Files
 
 - **Task-updated-new.ipynb**: Main notebook containing the complete analysis pipeline:
@@ -89,12 +63,13 @@ vomitoxin-prediction/
   
 - **requirements.txt**: Contains all dependencies:
   ```
-  pandas==1.3.5
-  numpy==1.21.6
-  matplotlib==3.5.3
-  seaborn==0.12.0
-  scikit-learn==1.0.2
-  xgboost==1.7.3
+   streamlit
+   pandas
+   numpy
+   matplotlib
+   seaborn
+   scikit-learn
+   xgboost
   ```
 
 ## Troubleshooting
